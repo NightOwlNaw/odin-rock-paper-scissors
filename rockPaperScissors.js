@@ -72,6 +72,7 @@ let computerScore = 0;
 //    Else if humanChoice == paper and computerChoice == rock: user wins
 //    Else if humanChoice == scissors and computerChoice == paper: user wins 
 //    Else computer wins
+// Else: display tie message
 
 // rock beats scissors 
 // scissors beats paper
@@ -81,25 +82,46 @@ let computerScore = 0;
 // Increment humanScore or computerScore variable based on the round winner.
 
 function playRound(humanChoice, computerChoice) {
-humanChoiceLowered = humanChoice.toLowerCase();
-console.log(humanChoiceLowered);
-console.log(computerChoice);
+let humanChoiceLowered = humanChoice.toLowerCase();
+// console.log("Test: " + humanChoiceLowered);
+// console.log("Test: " +computerChoice);
 
-
-console.log(
-"You win! " +
+let messageHumanWins = "You win! " +
     humanChoiceLowered.replace(humanChoiceLowered[0], humanChoiceLowered[0].toUpperCase())
-+ " beats " + computerChoice + ".");
++ " beats " + computerChoice + ".";
 
-console.log(
-"You lose! " +
+let messageComputerWins = "You lose! " +
     computerChoice.replace(computerChoice[0], computerChoice[0].toUpperCase())
-+ " beats " + humanChoiceLowered + ".");
++ " beats " + humanChoiceLowered + ".";
 
-console.log(
+if (humanChoiceLowered != computerChoice) {
+    if (humanChoiceLowered == "rock" && computerChoice == "scissor") {
+        console.log(messageHumanWins);
+        humanScore++;
+        console.log("You:" + humanScore + " Computer: " + computerScore);
+    }
+    else if (humanChoiceLowered == "paper" && computerChoice == "rock") {
+        console.log(messageHumanWins);
+        humanScore++;
+        console.log("You:" + humanScore + " Computer: " + computerScore);
+    }
+    else if (humanChoiceLowered == "scissors" && computerChoice == "paper") {
+        console.log(messageHumanWins);
+        humanScore++;
+        console.log("You:" + humanScore + " Computer: " + computerScore);
+    }
+    else {
+        console.log(messageComputerWins);
+        computerScore++;
+        console.log("You:" + humanScore + " Computer: " + computerScore);
+    }
+} 
+else {
+    console.log(
     "It's tie! You both chose " + computerChoice + ". Play another round."
-)
-
+);
+    console.log("You:" + humanScore + " Computer: " + computerScore);
+}
 }
 
 
