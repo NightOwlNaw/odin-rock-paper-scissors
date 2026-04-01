@@ -41,7 +41,7 @@ else {
 // Return user input.
 
 function getHumanChoice() {
-let humanChoice = prompt("We're playing Rock Paper Scissors, what is you're choice?");
+let humanChoice = prompt("We're playing Rock Paper Scissors, what is your choice?");
 console.log(humanChoice)
 
 return humanChoice;
